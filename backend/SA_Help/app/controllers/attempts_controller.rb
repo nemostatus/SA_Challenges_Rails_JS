@@ -3,8 +3,8 @@ class AttemptsController < ApplicationController
 
   # GET /attempts
   def index
-    @attempts = Attempt.all
-
+    @challenge = Challenge.find(params[:challenge_id])
+    @attempts = @challenge.attempts
     render json: @attempts
   end
 

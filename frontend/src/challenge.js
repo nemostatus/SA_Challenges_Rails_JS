@@ -15,6 +15,7 @@ class Challenge{
         <li> Description: ${this.description} </li>
         <li> Difficulty: ${this.difficulty} </li>
         <button class = "attempt-bttn" data-id = ${this.id} onClick = "createAttempt()"> Attempt</button>
+        <button class="attempts" data-id = ${this.id} onClick="fetchAttempts()">All Attempts </button>
         </ul>
         `}
 

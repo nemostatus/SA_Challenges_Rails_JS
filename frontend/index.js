@@ -18,6 +18,10 @@ function fetchChallenges(){
     })
 }
 
+function fetchAttempts(){
+    
+}
+
 //create
 function createChallenge(){
     let challengeForm = document.getElementById("challenge-form")
