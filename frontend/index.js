@@ -33,7 +33,33 @@ function createChallenge(){
     <input type = "submit" value= "Create Challenge">
     </form>
     `
-
+  challengeForm.addEventListener("submit", formSubmission)
 }
 
+function formSubmission(){
+    event.preventDefault();
+    let name = document.getElementById("name").value
+    let description = document.getElementById("description").value
+    let difficulty = document.getElementById("difficulty").value
+
+    let challenge = {
+        name: name ,
+        description: description,
+        difficulty: difficulty
+    }
+
+    fetch(`${BASE_URL}/challenges`,{
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(challenge)
+    })
+    .then(resp => resp.json())
+    .then(challenge => {
+        let c = new Challenge(challenge.id, challenge.name, challenge.description, challenge.difficulty)
+        c.renderChallenges()
+    })
+}
 //delete
