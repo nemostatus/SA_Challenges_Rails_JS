@@ -5,7 +5,7 @@ class CreateAttempts < ActiveRecord::Migration[6.0]
       t.string :deadline
       t.string :notes
       t.boolean :complete
-
+      t.belongs_to :challenge
       t.timestamps
     end
   end
