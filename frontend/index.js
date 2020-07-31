@@ -47,12 +47,12 @@ function createAttempt(){
     <input type ="text" id="deadline"><br>
     <label for ="notes"> Notes: </label>
     <input type ="textbox" id="notes"><br>
-    <input type = "hidden" id="complete" value = "false" >
+    <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
-    <input type = "submit" value= "Attempt Challenge">
+    <input type = "submit" value= "Attempt Challenge" >
     </form>
     `
-   
+    attemptForm.addEventListener("submit", AttemptformSubmission)
   }
 
 
@@ -83,7 +83,7 @@ function ChallengeformSubmission(){
     })
 }
 
-//////////////
+
 
 function AttemptformSubmission(){
     event.preventDefault();
@@ -111,7 +111,9 @@ function AttemptformSubmission(){
     .then(resp => resp.json())
     .then(attempt => {
         let a = new Attempt(attempt.id, attempt.name, attempt.deadline, attempt.notes, attempt.complete, attempt.challenge_id)
-        c.renderChallenges()
+        console.log(a)
+        
+
     })
 }
 

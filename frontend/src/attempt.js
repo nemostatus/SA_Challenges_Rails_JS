@@ -1,5 +1,6 @@
 class Attempt{
-    constructor(name,deadline,notes,complete, challenge_id){
+    constructor(id,name,deadline,notes,complete, challenge_id){
+        this.id = id;
         this.name = name;
         this.deadline = deadline;
         this.notes = notes; 
@@ -7,4 +8,16 @@ class Attempt{
         this.challenge_id = challenge_id
     }
     //render atempts
+    renderAttempts(){
+        let attemptsDiv = document.getElementById("attempts-container")
+        attemptsDiv.innerHTML +=
+            `
+            <ul>
+            <u><h3>Operation: ${this.name}  </h3></u>
+            <li>Deadline: ${this.deadline} </li>
+            <li>Notes: ${this.notes} </li>
+            <li>Completed: ${this.complete}</li>
+            </ul>
+            `
+    }
 }
