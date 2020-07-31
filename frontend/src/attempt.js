@@ -7,7 +7,7 @@ class Attempt{
         this.complete = complete;
         this.challenge_id = challenge_id
     }
-    //render atempts
+  
     renderAttempts(){
         let attemptsDiv = document.getElementById("attempts-container")
         attemptsDiv.innerHTML +=
@@ -18,6 +18,7 @@ class Attempt{
             <li>Notes: ${this.notes} </li>
             <li>Completed: ${this.complete}</li>
             </ul>
+            <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button
             `
     }
 }

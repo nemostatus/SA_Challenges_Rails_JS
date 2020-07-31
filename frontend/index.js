@@ -41,16 +41,21 @@ function createAttempt(){
     attemptForm.innerHTML +=
     `
     <form>
-    <label for ="name"> Attempt Name: </label>
+
+    <label for ="name">Attempt Name: </label>
     <input type = "text" id="name"><br>
+
     <label for ="deadline"> Deadline: </label>
     <input type ="text" id="deadline"><br>
+
     <label for ="notes"> Notes: </label>
-    <input type ="text" id="notes"><br>
+    <input type ="text" id="notes">
     <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
     <input type = "submit" value= "Attempt Challenge" >
+
     </form>
+
     `
     attemptForm.addEventListener("submit", AttemptformSubmission)
   }
@@ -92,6 +97,7 @@ function AttemptformSubmission(){
     let notes = document.getElementById("notes").value
     let complete = document.getElementById("complete").value
     let challenge_id = document.getElementById("challenge_id").value
+   
     let attempt = {
         name: name ,
         deadline: deadline,
@@ -114,5 +120,13 @@ function AttemptformSubmission(){
        a.renderAttempts()
 
     })
+}
+
+function deleteAttempt(){
+    let attemptId = parseInt(event.target.dataset.id) 
+    fetch(`${BASE_URL}/attempts/${attemptId}`,{
+        method:'DELETE'
+    })
+    setTimeout(function(){this.location.reload()},100);
 }
 
