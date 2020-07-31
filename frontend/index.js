@@ -33,10 +33,30 @@ function createChallenge(){
     <input type = "submit" value= "Create Challenge">
     </form>
     `
-  challengeForm.addEventListener("submit", formSubmission)
+  challengeForm.addEventListener("submit", ChallengeformSubmission)
 }
 
-function formSubmission(){
+function createAttempt(){
+    let attemptForm = document.getElementById("attempt-form")
+    attemptForm.innerHTML +=
+    `
+    <form>
+    <label for ="name"> Attempt Name: </label>
+    <input type ="text" id="name"><br>
+    <label for ="deadline"> Deadline: </label>
+    <input type ="text" id="deadline"><br>
+    <label for ="notes"> Notes: </label>
+    <input type ="textbox" id="notes"><br>
+    <input type = "hidden" id="complete" value = "false" >
+    <input type = "hidden" id="challenge_id" value ${event.target.dataset.id}>
+
+    </form>
+    `
+   
+  }
+
+
+function ChallengeformSubmission(){
     event.preventDefault();
     let name = document.getElementById("name").value
     let description = document.getElementById("description").value
@@ -62,4 +82,4 @@ function formSubmission(){
         c.renderChallenges()
     })
 }
-//delete
+

@@ -14,10 +14,10 @@ class Challenge{
         <u><h3> Challenge: ${this.name} </h3></u>
         <li> Description: ${this.description} </li>
         <li> Difficulty: ${this.difficulty} </li>
-        <button class = "attempt-bttn"> Attempt</button>
+        <button class = "attempt-bttn" data-id = ${this.id} onClick = "createAttempt()"> Attempt</button>
         </ul>
-        `
+        `}
 
 
-    }
+    
 }
