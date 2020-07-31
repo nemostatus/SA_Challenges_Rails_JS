@@ -42,11 +42,11 @@ function createAttempt(){
     `
     <form>
     <label for ="name"> Attempt Name: </label>
-    <input type ="text" id="name"><br>
+    <input type = "text" id="name"><br>
     <label for ="deadline"> Deadline: </label>
     <input type ="text" id="deadline"><br>
     <label for ="notes"> Notes: </label>
-    <input type ="textbox" id="notes"><br>
+    <input type ="text" id="notes"><br>
     <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
     <input type = "submit" value= "Attempt Challenge" >
@@ -99,7 +99,7 @@ function AttemptformSubmission(){
         complete: complete,
         challenge_id: challenge_id
     }
-
+  
     fetch(`${BASE_URL}/attempts`,{
         method: "POST",
         headers: {
@@ -111,8 +111,7 @@ function AttemptformSubmission(){
     .then(resp => resp.json())
     .then(attempt => {
         let a = new Attempt(attempt.id, attempt.name, attempt.deadline, attempt.notes, attempt.complete, attempt.challenge_id)
-        console.log(a)
-        
+       a.renderAttempts()
 
     })
 }

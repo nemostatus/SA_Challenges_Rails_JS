@@ -46,6 +46,6 @@ class AttemptsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def attempt_params
-      params.require(:attempt).permit(:name, :deadline, :notes, :complete)
+      params.require(:attempt).permit(:name, :deadline, :notes, :complete, :challenge_id)
     end
 end
