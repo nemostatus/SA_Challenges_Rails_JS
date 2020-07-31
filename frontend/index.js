@@ -12,6 +12,7 @@ function fetchChallenges(){
     .then(challenges => {
         for(const challenge of challenges){
             let c = new Challenge(challenge.id, challenge.name, challenge.description, challenge.difficulty)
+            c.renderChallenges()
         }
     })
 }
