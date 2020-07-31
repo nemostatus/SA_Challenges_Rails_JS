@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetchChallenges()
+    fetchChallenges();
+    createChallenge()
     
 })
 
@@ -18,5 +19,21 @@ function fetchChallenges(){
 }
 
 //create
+function createChallenge(){
+    let challengeForm = document.getElementById("challenge-form")
+    challengeForm.innerHTML +=
+    `
+    <form>
+    <label for="name">Challenge Name: </label>
+    <input type = "text" id= "name"><br>
+    <label for="description">Challenge Description </label>
+    <input type = "text"  id= "description"><br>
+    <label for="difficulty">Difficulty level: </label>
+    <input type = "number" min = "0" max ="10" id= "difficulty"><br>
+    <input type = "submit" value= "Create Challenge">
+    </form>
+    `
+
+}
 
 //delete
