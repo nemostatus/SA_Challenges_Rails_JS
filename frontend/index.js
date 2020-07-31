@@ -19,7 +19,14 @@ function fetchChallenges(){
 }
 
 function fetchAttempts(){
-    
+    fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
+    .then(resp => resp.json())
+    .then(attempts => {
+        for(const attempt of attempts){
+            let a = new Attempt(attempt.id, attempt.name, attempt.deadline, attempt.notes, attempt.complete, attempt.challenge_id)
+       a.renderAttempts()
+        }
+    })
 }
 
 //create
