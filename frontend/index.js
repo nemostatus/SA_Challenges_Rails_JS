@@ -48,8 +48,8 @@ function createAttempt(){
     <label for ="notes"> Notes: </label>
     <input type ="textbox" id="notes"><br>
     <input type = "hidden" id="complete" value = "false" >
-    <input type = "hidden" id="challenge_id" value ${event.target.dataset.id}>
-
+    <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
+    <input type = "submit" value= "Attempt Challenge">
     </form>
     `
    
@@ -79,6 +79,38 @@ function ChallengeformSubmission(){
     .then(resp => resp.json())
     .then(challenge => {
         let c = new Challenge(challenge.id, challenge.name, challenge.description, challenge.difficulty)
+        c.renderChallenges()
+    })
+}
+
+//////////////
+
+function AttemptformSubmission(){
+    event.preventDefault();
+    let name = document.getElementById("name").value
+    let deadline = document.getElementById("deadline").value
+    let notes = document.getElementById("notes").value
+    let complete = document.getElementById("complete").value
+    let challenge_id = document.getElementById("challenge_id").value
+    let attempt = {
+        name: name ,
+        deadline: deadline,
+        notes: notes,
+        complete: complete,
+        challenge_id: challenge_id
+    }
+
+    fetch(`${BASE_URL}/attempts`,{
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(attempt)
+    })
+    .then(resp => resp.json())
+    .then(attempt => {
+        let a = new Attempt(attempt.id, attempt.name, attempt.deadline, attempt.notes, attempt.complete, attempt.challenge_id)
         c.renderChallenges()
     })
 }
