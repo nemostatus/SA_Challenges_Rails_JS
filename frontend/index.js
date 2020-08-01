@@ -141,7 +141,7 @@ function deleteAttempt(){
     let attemptId = parseInt(event.target.dataset.id) 
     fetch(`${BASE_URL}/attempts/${attemptId}`,{
         method:'DELETE'
-    })
-    
+      })
+      setTimeout(function(){this.location.reload()},100);
 }
 
