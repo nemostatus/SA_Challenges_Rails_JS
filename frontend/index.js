@@ -60,7 +60,7 @@ function createAttempt(){
     <input type ="text" id="deadline"><br>
 
     <label for ="notes"> Notes: </label>
-    <input type ="text" id="notes">
+    <input type ="text" id="notes"><br>
     <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
     <input type = "submit" value= "Attempt Challenge" >

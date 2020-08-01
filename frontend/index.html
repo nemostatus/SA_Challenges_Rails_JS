@@ -6,6 +6,8 @@
     <script src="index.js"></script>
     <script src="src/attempt.js"></script>
     <script src="src/challenge.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
    .challenges{
     display:inline-flex;
@@ -33,7 +35,7 @@
     </div>
 
     <div id = "challenges-container">
-
+        <u><h1>Challenges</h1></u>
     </div>
    </div>
 
@@ -42,9 +44,30 @@
         
     </div>
     <div id = "attempts-container">
+        
+    </div>
+    </div>
+    <div class ="chart">
+        <canvas id="chart" >
 
+       </canvas>
     </div>
-    </div>
+    <script>
+        let chart = document.getElementById("chart").getContext('2d')
+        let AttemptChart = new Chart(chart,{
+            type: 'doughnut',
+            data: {
+                labels:['la','sf','ny'],
+                datasets:[{
+                    label: 'population',
+                    data:[1000, 1020, 1050]
+                 } ]
+            },
+            options:{
+                responsive: false
+            }
+        })
+    </script>
 
 
     

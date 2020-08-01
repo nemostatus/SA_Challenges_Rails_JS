@@ -10,6 +10,7 @@ class Challenge{
         let challengesDiv = document.getElementById("challenges-container")
         challengesDiv.innerHTML +=
         `
+        
         <ul>
         <u><h3> Challenge: ${this.name} </h3></u>
         <li> Description: ${this.description} </li>
