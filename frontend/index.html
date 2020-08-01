@@ -6,9 +6,28 @@
     <script src="index.js"></script>
     <script src="src/attempt.js"></script>
     <script src="src/challenge.js"></script>
-</head>
-<body>
+    <style>
+   .challenges{
+    display:inline-flex;
+    flex-direction: column;
+   }
+   .challenges div{
+       border: 1px ;
+       padding:10px
+
+   }
+
+   .attempts{
+    display:inline-flex;
+    flex-direction: column;
+   }
+
    
+    </style>
+</head>
+
+<body>
+   <div class = "challenges">
     <div id = "challenge-form">
         
     </div>
@@ -16,15 +35,16 @@
     <div id = "challenges-container">
 
     </div>
+   </div>
 
+   <div class= "attempts">
     <div id ="attempt-form">
         
     </div>
-
     <div id = "attempts-container">
 
     </div>
-
+    </div>
 
 
     
