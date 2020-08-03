@@ -51,43 +51,7 @@
     </div>
     <div class = "chart">
         <canvas id ="charting">
-            <script>
-                let cv = document.getElementById("charting").getContext('2d')
-                function graph(){
-    fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
-    .then(resp => resp.json())
-    .then(attempts => {
-
-      const truthy = attempts.filter(attempt => attempt.complete === true)
-      const falsy = attempts.filter(attempt => attempt.complete === false)
-    
-                    new Chart(cv,{
-                     type: 'doughnut',
-                     data: {
-                         labels:['complete','incomplete'],
-                         datasets:[{
-                             label: ['complete', 'incomplete'], 
-                             backgroundColor: ['rgb(64,224,208)','rgb(255, 99, 132)'],
-                             borderColor: 'rgb(0,0,0',
-                             data:[truthy.length, falsy.length]
-                          } ]
-                     },
-                     options:{
-                        scales: { pointLabelFontSize: 20 },
-                        responsive: true,
-                       maintainAspectRatio: false,
-                        title: {display:true,
-                             text:`${attempts.length} Total Attempt(s)`,
-                             fontSize:50},
-                           
-                     }
-                 }
-                 )
-                }
-                )
-            }
-              
-                 </script>
+            
               </canvas>
         </div>
 </div>
