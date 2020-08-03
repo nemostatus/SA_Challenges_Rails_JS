@@ -9,19 +9,20 @@
     <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
+.container{
+    display:flex;
+}
    .challenges{
-    display:inline-flex;
-    flex-direction: column;
+    flex:1
    }
-   .challenges div{
-       border: 1px ;
-       padding:10px
 
-   }
 
    .attempts{
-    display:inline-flex;
-    flex-direction: column;
+    flex:1
+   }
+
+   .chart{
+       flex:1
    }
 
    
@@ -29,6 +30,7 @@
 </head>
 
 <body>
+    <div class = "container">
    <div class = "challenges">
     <div id = "challenge-form">
         
@@ -79,12 +81,9 @@
             }
               
                  </script>
-              
-
-        </canvas>
-        
-    </div>
-  
+              </canvas>
+        </div>
+</div>
     
     
 </body>
