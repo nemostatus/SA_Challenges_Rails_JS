@@ -12,4 +12,6 @@ To Do
 - find a way to syle the webpage, look at examples and find a way to make it look good but not distracting 
 -don't get complacent, keep improving app and review material and make sure you can communicate your code and the concepts,FOLLOW THE DATA!
 
+-let the app explain itself,give some sort of directions or better labeling
+
  

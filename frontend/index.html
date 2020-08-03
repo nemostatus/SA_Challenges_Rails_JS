@@ -57,6 +57,7 @@
     fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
     .then(resp => resp.json())
     .then(attempts => {
+
       const truthy = attempts.filter(attempt => attempt.complete === true)
       const falsy = attempts.filter(attempt => attempt.complete === false)
     
@@ -72,7 +73,13 @@
                           } ]
                      },
                      options:{
-                         responsive: false
+                        scales: { pointLabelFontSize: 20 },
+                        responsive: true,
+                       maintainAspectRatio: false,
+                        title: {display:true,
+                             text:`${attempts.length} Total Attempt(s)`,
+                             fontSize:50},
+                           
                      }
                  }
                  )
