@@ -18,7 +18,9 @@ class Attempt{
             <li>Notes: ${this.notes} </li>
             <li>Completed: ${this.complete}</li>
             </ul>
-            <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button
+            <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button>
+            <button class="complete-bttn" data-id=${this.id}  > Complete! </button>
+            
             `
     }
 }
