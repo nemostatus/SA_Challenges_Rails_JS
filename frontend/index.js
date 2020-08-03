@@ -145,3 +145,22 @@ function deleteAttempt(){
       setTimeout(function(){this.location.reload()},100);
 }
 
+function updateAttempt(){
+    let attemptId = parseInt(event.target.dataset.id) 
+    
+    fetch(`${BASE_URL}/attempts/${attemptId}`,{
+        method:'PUT',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body:JSON.stringify({
+    complete: true
+    })
+ })
+ .then(resp => resp.json())
+ .then(data => console.log(data))
+
+}
+
+
