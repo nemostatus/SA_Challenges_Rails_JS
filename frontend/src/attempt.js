@@ -19,7 +19,7 @@ class Attempt{
             <li>Completed: ${this.complete}</li>
             </ul>
             <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button>
-            <button class="complete-bttn" data-id=${this.id} onClick ="updateAttempt()"  > Complete! </button>
+            <button class="complete-bttn" data-id=${this.id} onClick ="updateAttempt(), celebrate()"  > Complete! </button>
             
             `
     }

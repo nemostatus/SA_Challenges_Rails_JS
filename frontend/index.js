@@ -168,39 +168,18 @@ function scrollToTop(){
     window.scrollTo(0,0);
 }
 
+function celebrate(){
+    const quotes = ["I don't believe you have to be better than everybody else.I believe you have to be better than you ever thought you could be. -Ken Venturi",
+    "Fear is static that prevents me from hearing myself. -Samuel Butler",
+    "What you do today can improve all your tomorrows. ~Ralph Marston",
+    "Fall seven times, stand up eight. ~Japanese Proverb"]
+    const random = quotes[Math.floor(Math.random() * quotes.length)];
+    alert(`${random}`)
+}
 
-    function graph(){ 
-    let cv = document.getElementById("charting").getContext('2d')
 
-   fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
-    .then(resp => resp.json())
-    .then(attempts => {
-     const test = attempts
-      const truthy = attempts.filter(attempt => attempt.complete === true)
-      const falsy = attempts.filter(attempt => attempt.complete === false)
+
+
     
-           cv.innerHTML+=
-           ` new Chart(cv,{
-                     type: 'doughnut',
-                     data: {
-                         labels:['complete','incomplete'],
-                         datasets:[{
-                             label: ['complete', 'incomplete'], 
-                             backgroundColor: ['rgb(64,224,208)','rgb(255, 99, 132)'],
-                             borderColor: 'rgb(0,0,0',
-                             data:[truthy.length, falsy.length]
-                          } ]
-                     },
-                     options:{
-                        scales: { pointLabelFontSize: 20 },
-                        responsive: true,
-                       maintainAspectRatio: false,
-                        title: {display:true,
-                             text:${test.length} Total Attempt(s),
-                             fontSize:50}
-                            }
-                          }
-                        )`
-                        })}
     
                
