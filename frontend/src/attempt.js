@@ -17,12 +17,16 @@ class Attempt{
             <u><h3>Attempt: ${this.name}  </h3></u>
             <li>Deadline: ${this.deadline} </li>
             <li>Notes: ${this.notes} </li>
-            <li>Completed: ${this.complete}</li>
+          
             </ul>
             <button class="complete-bttn" data-id=${this.id} onClick ="updateAttempt(), celebrate()"  > Complete! </button>
             <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button>
-            
+      
             
             `
+            if(this.complete === true){ attemptsDiv.innerHTML += 
+            `<i class="fa fa-check-circle" aria-hidden="true"></i> COMPLETE!`}
     }
-}
+    
+
+    }
