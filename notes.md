@@ -4,3 +4,5 @@ depending on how many attempts are completed for a given challenge changes the s
 what to do?
 start by learning how to add  sprite into your app via appending from index.js
 if you can do that you can build the sprite helper
+
+photo credit - Photo by eberhard grossgasteiger from Pexels
