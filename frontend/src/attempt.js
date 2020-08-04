@@ -14,7 +14,7 @@ class Attempt{
             `
             
             <ul>
-            <u><h3>Operation: ${this.name}  </h3></u>
+            <u><h3>Attempt: ${this.name}  </h3></u>
             <li>Deadline: ${this.deadline} </li>
             <li>Notes: ${this.notes} </li>
             <li>Completed: ${this.complete}</li>
