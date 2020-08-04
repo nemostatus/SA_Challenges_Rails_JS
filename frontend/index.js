@@ -58,7 +58,7 @@ function createAttempt(){
     <form>
 
     <label for ="name">Attempt Name: </label>
-    <input type = "text" id="attemptname" name = "attemptname" value ="test"/><br>
+    <input type = "text" id="attemptname" name = "attemptname" ><br>
 
     <label for ="deadline"> Deadline: </label>
     <input type ="text" id="deadline"><br>

@@ -9,3 +9,4 @@ photo credit - Photo by eberhard grossgasteiger from Pexels
 bugs - attempts keep going when i want it to replace
 -attempts going too far break away from image
 replace innerhtml += w elm.insertAdjacentHTML( 'beforeend', str )
+icon popping up for completed attempts, format the challenges by difficuly level, add a search bar to find ... your attempt??
