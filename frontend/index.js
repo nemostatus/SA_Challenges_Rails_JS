@@ -58,7 +58,7 @@ function createAttempt(){
     <form>
 
     <label for ="name">Attempt Name: </label>
-    <input type = "text" id="name"><br>
+    <input type = "text" id="attemptname" name = "attemptname" value ="test"/><br>
 
     <label for ="deadline"> Deadline: </label>
     <input type ="text" id="deadline"><br>
@@ -107,7 +107,7 @@ function ChallengeformSubmission(){
 
 function AttemptformSubmission(){
     event.preventDefault();
-    let name = document.getElementById("name").value
+    let name = document.getElementById("attemptname").value
     let deadline = document.getElementById("deadline").value
     let notes = document.getElementById("notes").value
     let complete = document.getElementById("complete").value
