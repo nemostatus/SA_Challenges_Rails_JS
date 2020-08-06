@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchChallenges();
-    createChallenge()
+    createChallenge();
+
+   
     
 })
 
@@ -176,6 +178,8 @@ function celebrate(){
     const random = quotes[Math.floor(Math.random() * quotes.length)];
     alert(`${random}`)
 }
+
+
 
 
 

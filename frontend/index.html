@@ -3,10 +3,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Challenge Attempts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="index.js"></script>
     <script src="src/attempt.js"></script>
     <script src="src/challenge.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Lemonada&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <style>
@@ -40,6 +42,12 @@
 </head>
 
 <body>
+    <script>
+        
+        $(document).ready(function(){$(".container").click(function(){
+            alert("clicked")
+        })})
+        </script>
     <div class = "container">
    <div class = "challenges">
     <div id = "challenge-form">
@@ -62,6 +70,6 @@
     </div>
     </div>
     
-    
+   
 </body>
 </html>
