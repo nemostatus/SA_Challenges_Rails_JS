@@ -10,6 +10,7 @@ class Attempt{
   
     renderAttempts(){
         let attemptsDiv = document.getElementById("attempts-container")
+        attemptsDiv.innerHTML += `<u><h1>Attempts</h1></u>`
         attemptsDiv.innerHTML +=
             `
             
