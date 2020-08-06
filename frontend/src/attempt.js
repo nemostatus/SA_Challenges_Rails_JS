@@ -10,10 +10,10 @@ class Attempt{
   
     renderAttempts(){
         let attemptsDiv = document.getElementById("attempts-container")
-        attemptsDiv.innerHTML += `<u><h1>Attempts</h1></u>`
+        
         attemptsDiv.innerHTML +=
             `
-            
+            <h3></h3>
             <ul>
             <u><h3>Attempt: ${this.name}  </h3></u>
             <li>Deadline: ${this.deadline} </li>

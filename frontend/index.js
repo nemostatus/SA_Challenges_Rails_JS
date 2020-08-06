@@ -180,6 +180,18 @@ function celebrate(){
 }
 
 
+function updateDiv()
+{ 
+    $( ".attempted" ).load(location.href + " .attempted" );
+}
+
+function challengeTitle(){
+    
+    let attemptsDiv = document.getElementById("attempts-container")
+   attemptsDiv.innerHTML +=
+        `<h3>${event.target.dataset.name}</h3>`}
+
+
 
 
 
