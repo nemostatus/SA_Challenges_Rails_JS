@@ -13,6 +13,7 @@ function fetchChallenges(){
     fetch(`${BASE_URL}/challenges`)
     .then(resp => resp.json())
     .then(challenges => {
+        challenges.sort((function(a, b){return a.difficulty - b.difficulty}))
         for(const challenge of challenges){
             let c = new Challenge(challenge.id, challenge.name, challenge.description, challenge.difficulty)
             c.renderChallenges()
