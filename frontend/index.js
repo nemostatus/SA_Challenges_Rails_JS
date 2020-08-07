@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 const BASE_URL = "http://127.0.0.1:3000"
-//read
+
 
 function fetchChallenges(){
     fetch(`${BASE_URL}/challenges`)
@@ -35,10 +35,10 @@ function fetchAttempts(){
 }
 
 
-//array 
 
 
-//create
+
+
 function createChallenge(){
     let challengeForm = document.getElementById("challenge-form")
     challengeForm.innerHTML +=
@@ -112,13 +112,7 @@ function ChallengeformSubmission(){
     })
 }
 
-function challengeTitle(){
-    let name = event.target.dataset.name
-    
-    let attemptsDiv = document.getElementById("attempts-container")
-   attemptsDiv.innerHTML +=
-        
-`<h3>Challenge: ${name}</h3>}` }
+
 
 
 
@@ -201,15 +195,12 @@ function scrollToTop(){
     alert(`${random.text} - ${random.author} `)
             }
          )}
-   //puling random from array
+ 
     
 
 
 
-function updateDiv()
-{ 
-    $( ".attempted" ).load(location.href + " .attempted" );
-}
+
 
 
 
