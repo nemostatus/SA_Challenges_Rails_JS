@@ -13,7 +13,7 @@ class Attempt{
         
         attemptsDiv.innerHTML +=
             `
-            <h3>${event.target.dataset.name}</h3>
+        
             <ul>
             <u><h3>Attempt: ${this.name}  </h3></u>
             <li>Deadline: ${this.deadline} </li>
