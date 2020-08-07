@@ -62,8 +62,8 @@ function createAttempt(){
     <h1> <u>Try Challenge: ${event.target.dataset.name}<u> </h1>
     <form>
     
-    <label for ="name">Attempt Name: </label>
-    <input type = "text" id="attemptname" name = "attemptname" ><br>
+    
+    <input type = "hidden" id="attemptname" name = "attemptname" value = "${event.target.dataset.name}" ><br>
 
     <label for ="deadline"> Deadline: </label>
     <input type ="text" id="deadline"><br>
@@ -72,7 +72,7 @@ function createAttempt(){
     <input type ="text" id="notes"><br>
     <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
-    <input type = "submit" value= "Attempt Challenge" >
+    <input type = "submit" value= "Attempt Challenge" onClick = fetchQuotes();>
 
     </form>
 
@@ -160,7 +160,9 @@ function deleteAttempt(){
 
 function updateAttempt(){
     let attemptId = parseInt(event.target.dataset.id) 
-    
+    let attemptsDiv = document.getElementById("attempts-container")
+    let check = document.getElementsByClassName("fa fa-check-circle")
+    let h3 = attemptsDiv.getElementsByTagName('h3')
     fetch(`${BASE_URL}/attempts/${attemptId}`,{
         method:'PUT',
         headers: {
@@ -171,8 +173,10 @@ function updateAttempt(){
     complete: true
     })
  })
- .then(resp => resp.json())
- .then(data => console.log(data))
+ 
+ 
+ 
+ 
 
 }
 
