@@ -1,18 +1,17 @@
-class Attempt{
-    constructor(id,name,deadline,notes,complete, challenge_id){
-        this.id = id;
-        this.name = name;
-        this.deadline = deadline;
-        this.notes = notes; 
-        this.complete = complete;
-        this.challenge_id = challenge_id
-    }
-  
-    renderAttempts(){
-        let attemptsDiv = document.getElementById("attempts-container")
-        
-        attemptsDiv.innerHTML +=
-            `
+class Attempt {
+  constructor(id, name, deadline, notes, complete, challenge_id) {
+    this.id = id;
+    this.name = name;
+    this.deadline = deadline;
+    this.notes = notes;
+    this.complete = complete;
+    this.challenge_id = challenge_id;
+  }
+
+  renderAttempts() {
+    let attemptsDiv = document.getElementById("attempts-container");
+
+    attemptsDiv.innerHTML += `
         
             <ul>
             <u><h3>Attempting : ${this.name}   </h3></u>
@@ -24,10 +23,9 @@ class Attempt{
             <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button>
       
             
-            `
-            if(this.complete === true){ attemptsDiv.innerHTML += 
-            `<i class="fa fa-check-circle" aria-hidden="true"></i> COMPLETE!`}
+            `;
+    if (this.complete === true) {
+      attemptsDiv.innerHTML += `<i class="fa fa-check-circle" aria-hidden="true"></i> COMPLETE!`;
     }
-    
-
-    }
+  }
+}

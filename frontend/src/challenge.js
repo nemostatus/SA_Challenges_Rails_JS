@@ -1,15 +1,14 @@
-class Challenge{
-    constructor(id,name,description,difficulty){
-        this.id = id
-        this.name = name;
-        this.description = description;
-        this.difficulty = difficulty;
-    }
-    //render challenges
-    renderChallenges(){
-        let challengesDiv = document.getElementById("challenges-container")
-        challengesDiv.innerHTML +=
-        `
+class Challenge {
+  constructor(id, name, description, difficulty) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.difficulty = difficulty;
+  }
+
+  renderChallenges() {
+    let challengesDiv = document.getElementById("challenges-container");
+    challengesDiv.innerHTML += `
         
         <ul>
         <u><h3> Challenge: ${this.name} </h3></u>
@@ -20,17 +19,6 @@ class Challenge{
        
         </ul>
         
-       `}
-
-
-
-    
-
-       
-
-
-
-        }
-
-
-    
+       `;
+  }
+}
