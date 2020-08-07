@@ -20,7 +20,7 @@ class Attempt{
             <li>Notes: ${this.notes} </li>
           
             </ul>
-            <button class="complete-bttn" data-id=${this.id} onClick ="updateAttempt(), celebrate()"  > Complete! </button>
+            <button class="complete-bttn" data-id=${this.id} onClick ="updateAttempt(), fetchQuotes();"  > Complete! </button>
             <button class="delete-bttn" data-id=${this.id} onClick= "deleteAttempt()" > Delete Attempt </button>
       
             

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchChallenges();
     createChallenge();
-
+    
    
     
 })
@@ -33,6 +33,8 @@ function fetchAttempts(){
     })
 }
 
+
+//array 
 
 
 //create
@@ -105,6 +107,14 @@ function ChallengeformSubmission(){
     })
 }
 
+function challengeTitle(){
+    let name = event.target.dataset.name
+    
+    let attemptsDiv = document.getElementById("attempts-container")
+   attemptsDiv.innerHTML +=
+        
+`<h3>${name}</h3>}`}
+
 
 
 function AttemptformSubmission(){
@@ -170,14 +180,18 @@ function scrollToTop(){
     window.scrollTo(0,0);
 }
 
-function celebrate(){
-    const quotes = ["I don't believe you have to be better than everybody else.I believe you have to be better than you ever thought you could be. -Ken Venturi",
-    "Fear is static that prevents me from hearing myself. -Samuel Butler",
-    "What you do today can improve all your tomorrows. ~Ralph Marston",
-    "Fall seven times, stand up eight. ~Japanese Proverb"]
-    const random = quotes[Math.floor(Math.random() * quotes.length)];
-    alert(`${random}`)
-}
+
+    function fetchQuotes(){
+        fetch("https://type.fit/api/quotes")
+          .then(resp => resp.json())
+         .then(quotes => {
+            const random = quotes[Math.floor(Math.random() * quotes.length)];
+    alert(`${random.text} - ${random.author} `)
+            }
+         )}
+   //puling random from array
+    
+
 
 
 function updateDiv()
@@ -185,11 +199,7 @@ function updateDiv()
     $( ".attempted" ).load(location.href + " .attempted" );
 }
 
-function challengeTitle(){
-    
-    let attemptsDiv = document.getElementById("attempts-container")
-   attemptsDiv.innerHTML +=
-        `<h3>${event.target.dataset.name}</h3>`}
+
 
 
 
