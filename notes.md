@@ -9,3 +9,5 @@ if you can do that you can build the sprite helper
 replace innerhtml += w elm.insertAdjacentHTML( 'beforeend', str )
  add a search bar to find ... your attempt??
 make a seeds.rb file
+
+bug ---> 2 attempt forms is bad single it to 1

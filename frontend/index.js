@@ -77,8 +77,7 @@ function createAttempt() {
     <input type ="text" id="notes" required><br>
     <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
-    <input type = "submit" value= "Attempt Challenge" onClick = fetchQuotes();>
-
+    <input type = "submit" value= "Attempt Challenge" onClick = fetchQuotes()>
     </form>
 
     `;
@@ -198,3 +197,13 @@ function fetchQuotes() {
       alert(`${random.text} - ${random.author} `);
     });
 }
+
+function removeBttns(){
+    let bttns = document.getElementsByClassName("attempt-bttn")
+    for(const bttn of bttns){
+        setTimeout(function () {
+            bttn.remove()
+          }, 100);
+    }
+} //this is to fix the double form bug , i would like to add more to the form function that deletes the previous form with 
+// timed so it's deleted then new one created
