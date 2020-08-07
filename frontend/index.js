@@ -59,8 +59,9 @@ function createAttempt(){
     let attemptForm = document.getElementById("attempt-form")
     attemptForm.innerHTML +=
     `
+    <h1> <u>Try Challenge: ${event.target.dataset.name}<u> </h1>
     <form>
-
+    
     <label for ="name">Attempt Name: </label>
     <input type = "text" id="attemptname" name = "attemptname" ><br>
 
