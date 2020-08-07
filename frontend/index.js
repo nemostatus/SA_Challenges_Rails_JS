@@ -185,7 +185,7 @@ function updateAttempt() {
 function scrollToTop() {
   window.scrollTo(0, 0);
 }
-//changed
+
 
 function fetchQuotes() {
   fetch("https://type.fit/api/quotes")
