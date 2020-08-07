@@ -113,7 +113,7 @@ function challengeTitle(){
     let attemptsDiv = document.getElementById("attempts-container")
    attemptsDiv.innerHTML +=
         
-`<h3>${name}</h3>}`}
+`<h3>Challenge: ${name}</h3>}` }
 
 
 
