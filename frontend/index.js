@@ -44,11 +44,11 @@ function createChallenge(){
     `
     <form>
     <label for="name">Challenge Name: </label>
-    <input type = "text" id= "name"><br>
+    <input type = "text" id= "name" required><br>
     <label for="description">Challenge Description </label>
-    <input type = "text"  id= "description"><br>
+    <input type = "text"  id= "description" required><br>
     <label for="difficulty">Difficulty level: </label>
-    <input type = "number" min = "0" max ="10" id= "difficulty"><br>
+    <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
     <input type = "submit" value= "Create Challenge">
     </form>
     `
@@ -66,10 +66,10 @@ function createAttempt(){
     <input type = "hidden" id="attemptname" name = "attemptname" value = "${event.target.dataset.name}" ><br>
 
     <label for ="deadline"> Deadline: </label>
-    <input type ="text" id="deadline"><br>
+    <input type ="text" id="deadline" required><br>
 
     <label for ="notes"> Notes: </label>
-    <input type ="text" id="notes"><br>
+    <input type ="text" id="notes" required><br>
     <input type = "hidden" id="complete" value = false >
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
     <input type = "submit" value= "Attempt Challenge" onClick = fetchQuotes();>
