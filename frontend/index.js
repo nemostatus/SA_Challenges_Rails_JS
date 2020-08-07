@@ -191,6 +191,9 @@ function scrollToTop(){
           .then(resp => resp.json())
          .then(quotes => {
             const random = quotes[Math.floor(Math.random() * quotes.length)];
+             if(random.author === null){
+                 random.author = "Anonymous"
+                }
     alert(`${random.text} - ${random.author} `)
             }
          )}
