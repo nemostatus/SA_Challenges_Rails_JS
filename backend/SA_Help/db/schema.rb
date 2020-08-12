@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_070230) do
+ActiveRecord::Schema.define(version: 2020_08_12_124944) do
 
   create_table "attempts", force: :cascade do |t|
     t.string "name"
     t.string "deadline"
     t.string "notes"
-    t.boolean "complete"
     t.integer "challenge_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cheer"
     t.index ["challenge_id"], name: "index_attempts_on_challenge_id"
   end
 
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_070230) do
     t.integer "difficulty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "complete"
   end
 
 end
