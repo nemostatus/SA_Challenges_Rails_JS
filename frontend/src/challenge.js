@@ -1,9 +1,10 @@
 class Challenge {
-  constructor(id, name, description, difficulty) {
+  constructor(id, name, description, difficulty, complete) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.difficulty = difficulty;
+    this.complete = complete
   }
 
   renderChallenges() {

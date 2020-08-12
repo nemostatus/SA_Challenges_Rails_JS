@@ -1,10 +1,10 @@
 class Attempt {
-  constructor(id, name, deadline, notes, complete, challenge_id) {
+  constructor(id, name, deadline, notes, cheer, challenge_id) {
     this.id = id;
     this.name = name;
     this.deadline = deadline;
     this.notes = notes;
-    this.complete = complete;
+    this.cheer = cheer;
     this.challenge_id = challenge_id;
   }
 
@@ -24,8 +24,6 @@ class Attempt {
       
             
             `;
-    if (this.complete === true) {
-      attemptsDiv.innerHTML += `<i class="fa fa-check-circle" aria-hidden="true"></i> COMPLETE!`;
-    }
+   
   }
 }
