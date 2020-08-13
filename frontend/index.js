@@ -17,7 +17,8 @@ function fetchChallenges() {
           challenge.id,
           challenge.name,
           challenge.description,
-          challenge.difficulty
+          challenge.difficulty,
+          challenge.complete
         );
         c.renderChallenges();
       }
@@ -52,7 +53,7 @@ function createChallenge() {
     <input type = "text"  id= "description" required><br>
     <label for="difficulty">Difficulty level: </label>
     <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
-    <input type = "hidden" id="complete" name= "complete" value ="0" > 
+    <input type = "hidden" id="complete" name= "complete" value = "1" > 
     <input type = "submit" value= "Create Challenge">
     </form>
     `;
@@ -126,14 +127,14 @@ function AttemptformSubmission() {
   let name = document.getElementById("attemptname").value;
   let deadline = document.getElementById("deadline").value;
   let notes = document.getElementById("notes").value;
-  let complete = document.getElementById("complete").value;
+ 
   let challenge_id = document.getElementById("challenge_id").value;
 
   let attempt = {
     name: name,
     deadline: deadline,
     notes: notes,
-    complete: complete,
+   
     challenge_id: challenge_id,
   };
 
@@ -152,13 +153,27 @@ function AttemptformSubmission() {
         attempt.name,
         attempt.deadline,
         attempt.notes,
-        attempt.complete,
+      
         attempt.challenge_id
       );
       a.renderAttempts();
     });
 }
 
+function updateChallenge() {
+  let challengeId = parseInt(event.target.dataset.id);
+ 
+  fetch(`${BASE_URL}/challenges/${challengeId}`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      complete: complete + 1,
+    }),
+  });
+}
 
 
 
