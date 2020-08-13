@@ -17,7 +17,8 @@ class Attempt {
             <u><h3>Attempting : ${this.name}   </h3></u>
             <li>Deadline: ${this.deadline} </li>
             <li>Notes: ${this.notes} </li>
-          
+            <li> ${this.cheer} Cheer(s)! </li>
+            <button class="cheer" data-id = ${this.id} data-cheer = ${this.cheer} onClick="updateAttempt()">You've got this! </button>
             </ul>
            
            
