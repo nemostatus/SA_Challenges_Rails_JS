@@ -51,7 +51,7 @@ function createChallenge() {
     <input type = "text" id= "name" required><br>
     <label for="description">Challenge Description </label>
     <input type = "text"  id= "description" required><br>
-    <label for="difficulty">Difficulty level: </label>
+    <label for="difficulty">  Difficulty level: </label>
     <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
     <input type = "hidden" id="complete" name= "complete" value = "0" > 
     <input type = "submit" value= "Create Challenge">
@@ -77,7 +77,7 @@ function createAttempt() {
     <label for ="deadline"> <i class='far fa-calendar-alt' style='font-size:24px'></i> Deadline: </label>
     <input type ="text" onkeydown="event.preventDefault()" autocomplete = "off" id="deadline" required><br>
 
-    <label for ="notes"> Notes: </label>
+    <label for ="notes"><i class='fas fa-book' style='font-size:24px'></i> Notes: </label>
     <input type ="text" id="notes" required><br>
     <input type = "hidden" id="cheer" value = "0">
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
