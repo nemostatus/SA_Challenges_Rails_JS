@@ -74,8 +74,8 @@ function createAttempt() {
     
     <input type = "hidden" id="attemptname" name = "attemptname" value = "${event.target.dataset.name}" ><br>
 
-    <label for ="deadline"> Deadline: </label>
-    <input type ="text"  id="deadline" required><br>
+    <label for ="deadline"> <i class='far fa-calendar-alt' style='font-size:24px'></i> Deadline: </label>
+    <input type ="text" onkeydown="event.preventDefault()" autocomplete = "off" id="deadline" required><br>
 
     <label for ="notes"> Notes: </label>
     <input type ="text" id="notes" required><br>
