@@ -154,32 +154,9 @@ function AttemptformSubmission() {
     });
 }
 
-function deleteAttempt() {
-  let attemptId = parseInt(event.target.dataset.id);
-  fetch(`${BASE_URL}/attempts/${attemptId}`, {
-    method: "DELETE",
-  });
-  setTimeout(function () {
-    this.location.reload();
-  }, 100);
-}
 
-function updateAttempt() {
-  let attemptId = parseInt(event.target.dataset.id);
-  let attemptsDiv = document.getElementById("attempts-container");
-  let check = document.getElementsByClassName("fa fa-check-circle");
-  let h3 = attemptsDiv.getElementsByTagName("h3");
-  fetch(`${BASE_URL}/attempts/${attemptId}`, {
-    method: "PUT",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      complete: true,
-    }),
-  });
-}
+
+
 
 function scrollToTop() {
   window.scrollTo(0, 0);
