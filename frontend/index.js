@@ -161,8 +161,9 @@ function AttemptformSubmission() {
 }
 
 function updateChallenge() {
+
   let challengeId = parseInt(event.target.dataset.id);
- 
+  let completeValue = parseInt(event.target.dataset.complete)
   fetch(`${BASE_URL}/challenges/${challengeId}`, {
     method: "PUT",
     headers: {
@@ -170,7 +171,7 @@ function updateChallenge() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      complete: complete + 1,
+      complete: completeValue + 1,
     }),
   });
 }
