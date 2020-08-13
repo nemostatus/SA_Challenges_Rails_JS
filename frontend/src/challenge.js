@@ -4,7 +4,7 @@ class Challenge {
     this.name = name;
     this.description = description;
     this.difficulty = difficulty;
-    this.complete = complete
+    this.complete = complete;
   }
 
   renderChallenges() {
@@ -15,7 +15,8 @@ class Challenge {
         <u><h3> Challenge: ${this.name} </h3></u>
         <li> Description: ${this.description} </li>
         <li> Difficulty: ${this.difficulty} </li>
-        <button class="complete-bttn" data-id=${this.id} onClick =" fetchQuotes();"  > Complete! </button>
+        <li> ${this.complete} have completed this challenge </li> 
+        <button class="complete-bttn" data-id=${this.id} onClick =" fetchQuotes()"  > Complete! </button>
         <button class = "attempt-bttn" data-id = ${this.id} data-name = "${this.name}" onClick = "createAttempt();  scrollToTop(); removeBttns()"> Attempt</button>
         <button class="attempted" data-id = ${this.id}   onClick="fetchAttempts(); this.onclick=null; scrollToTop() ">All Attempts </button>
        

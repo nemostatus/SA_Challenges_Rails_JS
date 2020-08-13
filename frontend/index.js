@@ -52,11 +52,14 @@ function createChallenge() {
     <input type = "text"  id= "description" required><br>
     <label for="difficulty">Difficulty level: </label>
     <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
+    <input type = "hidden" id="complete" name= "complete" value ="0" > 
     <input type = "submit" value= "Create Challenge">
     </form>
     `;
   challengeForm.addEventListener("submit", ChallengeformSubmission);
 }
+
+
 
 function createAttempt() {
   let attemptForm = document.getElementById("attempt-form");
@@ -75,7 +78,7 @@ function createAttempt() {
 
     <label for ="notes"> Notes: </label>
     <input type ="text" id="notes" required><br>
-    <input type = "hidden" id="complete" value = false >
+  
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
     <input type = "submit" value= "Attempt Challenge" onClick = fetchQuotes()>
     </form>
@@ -89,11 +92,12 @@ function ChallengeformSubmission() {
   let name = document.getElementById("name").value;
   let description = document.getElementById("description").value;
   let difficulty = document.getElementById("difficulty").value;
-
+  let complete = document.getElementById("complete").value;
   let challenge = {
     name: name,
     description: description,
     difficulty: difficulty,
+    complete: complete
   };
 
   fetch(`${BASE_URL}/challenges`, {
@@ -110,7 +114,8 @@ function ChallengeformSubmission() {
         challenge.id,
         challenge.name,
         challenge.description,
-        challenge.difficulty
+        challenge.difficulty, 
+        challenge.complete
       );
       c.renderChallenges();
     });
