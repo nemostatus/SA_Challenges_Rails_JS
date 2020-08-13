@@ -74,8 +74,8 @@ function createAttempt() {
     
     <input type = "hidden" id="attemptname" name = "attemptname" value = "${event.target.dataset.name}" ><br>
 
-    <label for ="deadline"> Deadline: </label>
-    <input type ="text" id="deadline" required><br>
+    <label for ="datepicker"> Deadline: </label>
+    <input type ="text" class = "calendar" id="datepicker" required><br>
 
     <label for ="notes"> Notes: </label>
     <input type ="text" id="notes" required><br>
@@ -219,5 +219,10 @@ function removeBttns(){
             bttn.remove()
           }, 100);
     }
-} //this is to fix the double form bug , i would like to add more to the form function that deletes the previous form with 
-// timed so it's deleted then new one created
+}
+
+function calendar(){
+$(function(){
+  $("#datepicker").datepicker();
+});
+}
