@@ -47,11 +47,11 @@ function createChallenge() {
   let challengeForm = document.getElementById("challenge-form");
   challengeForm.innerHTML += `
     <form>
-    <label for="name">Challenge Name: </label>
+    <label for="name"><i class="fas fa-universal-access" style='font-size:28px'></i> Challenge Name: </label>
     <input type = "text" id= "name" required><br>
-    <label for="description">Challenge Description </label>
+    <label for="description"> <i class='fas fa-book' style='font-size:24px'></i>  Challenge Description </label>
     <input type = "text"  id= "description" required><br>
-    <label for="difficulty">  Difficulty level: </label>
+    <label for="difficulty"> <i class="fas fa-burn" style='font-size:28px'></i> Difficulty level: </label>
     <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
     <input type = "hidden" id="complete" name= "complete" value = "0" > 
     <input type = "submit" class = "challenge-bttn" value= "Create Challenge">
