@@ -54,7 +54,7 @@ function createChallenge() {
     <label for="difficulty">  Difficulty level: </label>
     <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
     <input type = "hidden" id="complete" name= "complete" value = "0" > 
-    <input type = "submit" value= "Create Challenge">
+    <input type = "submit" class = "challenge-bttn" value= "Create Challenge">
     </form>
     `;
   challengeForm.addEventListener("submit", ChallengeformSubmission);
@@ -81,7 +81,7 @@ function createAttempt() {
     <input type ="text" id="notes" required><br>
     <input type = "hidden" id="cheer" value = "0">
     <input type = "hidden" id="challenge_id" value = ${event.target.dataset.id}>
-    <input type = "submit" value= "Attempt Challenge" onClick = fetchQuotes()>
+    <input type = "submit" value= "Attempt Challenge" class="new-attempt-bttn" onClick = fetchQuotes()>
     </form>
 
     `;

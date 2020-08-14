@@ -12,7 +12,7 @@ class Attempt {
     let attemptsDiv = document.getElementById("attempts-container");
 
     attemptsDiv.innerHTML += `
-    <p> Cheer on other attempts! </p>
+    
             <ul>
             <u><h3>Attempting : ${this.name}   </h3></u>
             <li>Deadline: ${this.deadline} </li>
