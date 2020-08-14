@@ -14,7 +14,7 @@ class Attempt {
     attemptsDiv.innerHTML += `
     
             <ul>
-            <u><h3>Attempting : ${this.name}   </h3></u>
+            <u><h3>Attempt of the ${this.name} challenge  </h3></u>
             <li>Deadline: ${this.deadline} </li>
             <li>Notes: ${this.notes} </li>
             <li> ${this.cheer} Cheer(s)! </li>
