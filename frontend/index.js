@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   fetchChallenges();
   createChallenge();
+  greeting();
 });
 
 const BASE_URL = "http://127.0.0.1:3000";
@@ -226,3 +227,20 @@ $(function(){
   $("#deadline").datepicker();
 });
 }
+
+function greeting(){
+  let date = new Date()
+  let time =date.getHours()
+let item = document.getElementById('navbar').getElementsByTagName('ul')
+let greeting = item[0].getElementsByClassName("nav-item")
+let trueGreeting = greeting[0]
+if(6 < time < 20){
+  trueGreeting.innerHTML+= `<h2> <i class="fas fa-sun" style='font-size:44px; color: gold'></i> Good Day!</h2> `
+}
+else 
+{
+  trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Day!</h2> `
+}
+}
+
+
