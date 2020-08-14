@@ -239,7 +239,7 @@ if(6 < time < 20){
 }
 else 
 {
-  trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Day!</h2> `
+  trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `
 }
 }
 
