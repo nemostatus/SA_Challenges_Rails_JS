@@ -67,9 +67,9 @@ function createAttempt() {
   let attemptForm = document.getElementById("attempt-form");
   attemptForm.innerHTML += `
     <h2> <u>Try Challenge: ${event.target.dataset.name}</u> </h2>
-    <p> e.g. deadline: friday<br>
+    <i> <p> e.g. deadline: friday<br>
     notes: Find good sources for stand up, and practice in front of my family and friends first
-</p>
+</p></i>
     <form>
     
     
