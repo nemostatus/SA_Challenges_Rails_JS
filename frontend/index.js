@@ -234,11 +234,15 @@ function greeting(){
 let item = document.getElementById('navbar').getElementsByTagName('ul')
 let greeting = item[0].getElementsByClassName("nav-item")
 let trueGreeting = greeting[0]
-if(6 < time < 20){
+
+ if(time < 6)
+{
+  trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Hello night owl!</h2> `
+}
+else if(time < 19){
   trueGreeting.innerHTML+= `<h2> <i class="fas fa-sun" style='font-size:44px; color: gold'></i> Good Day!</h2> `
 }
-else 
-{
+else{
   trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `
 }
 }
