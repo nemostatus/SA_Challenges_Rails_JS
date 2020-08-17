@@ -10,7 +10,7 @@ function fetchChallenges() {
   fetch(`${BASE_URL}/challenges`)
     .then((resp) => resp.json())
     .then((challenges) => {
-      challenges.sort((a,b) => {
+      challenges.sort((a, b) => {
         return a.difficulty - b.difficulty;
       });
       for (const challenge of challenges) {
@@ -61,8 +61,6 @@ function createChallenge() {
   challengeForm.addEventListener("submit", ChallengeformSubmission);
 }
 
-
-
 function createAttempt() {
   let attemptForm = document.getElementById("attempt-form");
   attemptForm.innerHTML += `
@@ -71,13 +69,9 @@ function createAttempt() {
     notes: Find good sources for stand up, and practice in front of my family and friends first
 </p></i>
     <form>
-    
-    
     <input type = "hidden" id="attemptname" name = "attemptname" value = "${event.target.dataset.name}" ><br>
-
     <label for ="deadline"> <i class='far fa-calendar-alt' style='font-size:24px'></i> Deadline: </label>
     <input type ="text" onkeydown="event.preventDefault()" autocomplete = "off" id="deadline" required><br>
-
     <label for ="notes"><i class='fas fa-book' style='font-size:24px'></i> Notes: </label>
     <input type ="text" id="notes" required><br>
     <input type = "hidden" id="cheer" value = "0">
@@ -99,7 +93,7 @@ function ChallengeformSubmission() {
     name: name,
     description: description,
     difficulty: difficulty,
-    complete: complete
+    complete: complete,
   };
 
   fetch(`${BASE_URL}/challenges`, {
@@ -116,7 +110,7 @@ function ChallengeformSubmission() {
         challenge.id,
         challenge.name,
         challenge.description,
-        challenge.difficulty, 
+        challenge.difficulty,
         challenge.complete
       );
       c.renderChallenges();
@@ -162,9 +156,8 @@ function AttemptformSubmission() {
 }
 
 function updateChallenge() {
-
   let challengeId = parseInt(event.target.dataset.id);
-  let completeValue = parseInt(event.target.dataset.complete)
+  let completeValue = parseInt(event.target.dataset.complete);
   fetch(`${BASE_URL}/challenges/${challengeId}`, {
     method: "PUT",
     headers: {
@@ -175,13 +168,12 @@ function updateChallenge() {
       complete: completeValue + 1,
     }),
   });
-  setInterval('location.reload()', 5000);
+  setInterval("location.reload()", 5000);
 }
 
 function updateAttempt() {
-
   let attemptId = parseInt(event.target.dataset.id);
-  let cheerValue = parseInt(event.target.dataset.cheer)
+  let cheerValue = parseInt(event.target.dataset.cheer);
   fetch(`${BASE_URL}/attempts/${attemptId}`, {
     method: "PUT",
     headers: {
@@ -192,16 +184,12 @@ function updateAttempt() {
       cheer: cheerValue + 1,
     }),
   });
-  setInterval('location.reload()', 5000);
+  setInterval("location.reload()", 5000);
 }
-
-
-
 
 function scrollToTop() {
   window.scrollTo(0, 0);
 }
-
 
 function fetchQuotes() {
   fetch("https://type.fit/api/quotes")
@@ -215,38 +203,32 @@ function fetchQuotes() {
     });
 }
 
-function removeBttns(){
-    let bttns = document.getElementsByClassName("attempt-bttn")
-    for(const bttn of bttns){
-        setTimeout(() => {
-            bttn.remove()
-          }, 100);
-    }
+function removeBttns() {
+  let bttns = document.getElementsByClassName("attempt-bttn");
+  for (const bttn of bttns) {
+    setTimeout(() => {
+      bttn.remove();
+    }, 100);
+  }
 }
 
-function calendar(){
-$(()=>{
-  $("#deadline").datepicker();
-});
+function calendar() {
+  $(() => {
+    $("#deadline").datepicker();
+  });
 }
 
-function greeting(){
-  let date = new Date()
-  let time =date.getHours()
-let item = document.getElementById('navbar').getElementsByTagName('ul')
-let trueGreeting = item[0].getElementsByClassName("nav-item")[0]
+function greeting() {
+  let date = new Date();
+  let time = date.getHours();
+  let item = document.getElementById("navbar").getElementsByTagName("ul");
+  let trueGreeting = item[0].getElementsByClassName("nav-item")[0];
 
-
- if(time < 6)
-{
-  trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Hello night owl!</h2> `
+  if (time < 6) {
+    trueGreeting.innerHTML += `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Hello night owl!</h2> `;
+  } else if (time < 19) {
+    trueGreeting.innerHTML += `<h2> <i class="fas fa-sun" style='font-size:44px; color: gold'></i> Good Day!</h2> `;
+  } else {
+    trueGreeting.innerHTML += `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `;
+  }
 }
-else if(time < 19){
-  trueGreeting.innerHTML+= `<h2> <i class="fas fa-sun" style='font-size:44px; color: gold'></i> Good Day!</h2> `
-}
-else{
-  trueGreeting.innerHTML+= `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `
-}
-}
-
-
