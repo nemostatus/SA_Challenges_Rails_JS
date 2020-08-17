@@ -10,7 +10,7 @@ function fetchChallenges() {
   fetch(`${BASE_URL}/challenges`)
     .then((resp) => resp.json())
     .then((challenges) => {
-      challenges.sort(function (a, b) {
+      challenges.sort((a,b) => {
         return a.difficulty - b.difficulty;
       });
       for (const challenge of challenges) {
@@ -218,14 +218,14 @@ function fetchQuotes() {
 function removeBttns(){
     let bttns = document.getElementsByClassName("attempt-bttn")
     for(const bttn of bttns){
-        setTimeout(function () {
+        setTimeout(() => {
             bttn.remove()
           }, 100);
     }
 }
 
 function calendar(){
-$(function(){
+$(()=>{
   $("#deadline").datepicker();
 });
 }
@@ -234,8 +234,8 @@ function greeting(){
   let date = new Date()
   let time =date.getHours()
 let item = document.getElementById('navbar').getElementsByTagName('ul')
-let greeting = item[0].getElementsByClassName("nav-item")
-let trueGreeting = greeting[0]
+let trueGreeting = item[0].getElementsByClassName("nav-item")[0]
+
 
  if(time < 6)
 {
