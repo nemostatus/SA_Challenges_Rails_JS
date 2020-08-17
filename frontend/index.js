@@ -175,6 +175,7 @@ function updateChallenge() {
       complete: completeValue + 1,
     }),
   });
+  setInterval('location.reload()', 5000);
 }
 
 function updateAttempt() {
@@ -191,6 +192,7 @@ function updateAttempt() {
       cheer: cheerValue + 1,
     }),
   });
+  setInterval('location.reload()', 5000);
 }
 
 
