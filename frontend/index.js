@@ -25,10 +25,15 @@ function fetchAttempts() {
   fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
     .then((resp) => resp.json())
     .then((attempts) => {
+      if(attempts.length === 0){
+        document.getElementById("attempts-container").innerHTML = "<i> There are currently no attempts for this challenge, be the first! </i>"
+          
+      }
+      else{
       for (const attempt of attempts) {
         let a = new Attempt(attempt);
        a.renderAttempts();
-      }
+      }}
     });
 }
 
@@ -43,7 +48,7 @@ function createChallenge() {
     <label for="difficulty"> <i class="fas fa-burn" style='font-size:28px'></i> Difficulty level: </label>
     <input type = "number" min = "0" max ="10" id= "difficulty" required><br>
     <input type = "hidden" id="complete" name= "complete" value = "0" > 
-    <input type = "submit" class = "challenge-bttn" value= "Create Challenge">
+    <input type = "submit" class = "challenge-bttn" value= "Create Challenge" title = "Challenge yourself, challenge others!">
     </form>
     `;
   challengeForm.addEventListener("submit", ChallengeformSubmission);
@@ -77,12 +82,12 @@ function ChallengeformSubmission() {
   let name = document.getElementById("name").value;
   let description = document.getElementById("description").value;
   let difficulty = document.getElementById("difficulty").value;
-  let complete = document.getElementById("complete").value;
+  
   let challenge = {
     name: name,
     description: description,
     difficulty: difficulty,
-    complete: complete,
+    
   };
 
   fetch(`${BASE_URL}/challenges`, {
@@ -96,11 +101,7 @@ function ChallengeformSubmission() {
     .then((resp) => resp.json())
     .then((challenge) => {
       let c = new Challenge(
-        challenge.id,
-        challenge.name,
-        challenge.description,
-        challenge.difficulty,
-        challenge.complete
+        challenge
       );
       c.renderChallenges();
     });
