@@ -138,21 +138,6 @@ function AttemptformSubmission() {
     });
 }
 
-function updateChallenge() {
-  let challengeId = parseInt(event.target.dataset.id);
-  let completeValue = parseInt(event.target.dataset.complete);
-  fetch(`${BASE_URL}/challenges/${challengeId}`, {
-    method: "PUT",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      complete: completeValue + 1,
-    }),
-  });
-
-}
 
 function updateAttempt() {
   
@@ -215,7 +200,7 @@ document.getElementById(divId).innerHTML = ""
 }
 
 function findAndClearDiv(number){
-  let counter = []
+  
   let buttons = document.getElementsByClassName('cheer')
 let array = Array.from(buttons)
 
