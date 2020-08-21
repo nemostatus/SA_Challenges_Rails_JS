@@ -155,7 +155,7 @@ function updateChallenge() {
 }
 
 function updateAttempt() {
-  findAndClearDiv(parseInt(event.target.dataset.id))
+  
   let attemptId = parseInt(event.target.dataset.id);
   let cheerValue = parseInt(event.target.dataset.cheer);
   fetch(`${BASE_URL}/attempts/${attemptId}`, {
@@ -217,7 +217,8 @@ document.getElementById(divId).innerHTML = ""
 function findAndClearDiv(number){
   let buttons = document.getElementsByClassName('cheer')
 let array = Array.from(buttons)
+console.log(number)
 let buttonIneed = array.filter(button => button.dataset.id === `${number}`)
 let ul = buttonIneed[0].parentElement
-ul.innerHTML = ""
+ul.getElementsByTagName('li')[2].innerHTML = `${parseInt(event.target.dataset.cheer) + 1 }  cheer(s)! `
 }
