@@ -62,6 +62,7 @@ function createChallenge() {
 }
 
 function createAttempt() {
+  clearDiv('attempt-form')
   let attemptForm = document.getElementById("attempt-form");
   attemptForm.innerHTML += `
     <h2> <u>Try Challenge: ${event.target.dataset.name}</u> </h2>
@@ -143,13 +144,13 @@ function AttemptformSubmission() {
   })
     .then((resp) => resp.json())
     .then((attempt) => {
-      let a = new Attempt(
-        attempt.id,
-        attempt.name,
-        attempt.deadline,
-        attempt.notes,
-        attempt.cheer,
-        attempt.challenge_id
+      let a = new Attempt(attempt
+        // attempt.id,
+        // attempt.name,
+        // attempt.deadline,
+        // attempt.notes,
+        // attempt.cheer,
+        // attempt.challenge_id
       );
       a.renderAttempts();
     });
@@ -168,7 +169,7 @@ function updateChallenge() {
       complete: completeValue + 1,
     }),
   });
-  setInterval("location.reload()", 5000);
+
 }
 
 function updateAttempt() {
@@ -184,7 +185,7 @@ function updateAttempt() {
       cheer: cheerValue + 1,
     }),
   });
-  setInterval("location.reload()", 5000);
+ 
 }
 
 function scrollToTop() {
@@ -203,14 +204,14 @@ function fetchQuotes() {
     });
 }
 
-function removeBttns() {
-  let bttns = document.getElementsByClassName("attempt-bttn");
-  for (const bttn of bttns) {
-    setTimeout(() => {
-      bttn.remove();
-    }, 100);
-  }
-}
+// function removeBttns() {
+//   let bttns = document.getElementsByClassName("attempt-bttn");
+//   for (const bttn of bttns) {
+//     setTimeout(() => {
+//       bttn.remove();
+//     }, 100);
+//   }
+// }
 
 function calendar() {
   $(() => {
@@ -231,4 +232,8 @@ function greeting() {
   } else {
     trueGreeting.innerHTML += `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `;
   }
+}
+
+function clearDiv(divId){
+document.getElementById(divId).innerHTML = ""
 }
