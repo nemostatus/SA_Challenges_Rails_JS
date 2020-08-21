@@ -27,6 +27,7 @@ function fetchChallenges() {
 }
 
 function fetchAttempts() {
+  clearDiv("attempts-container")
   fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
     .then((resp) => resp.json())
     .then((attempts) => {
