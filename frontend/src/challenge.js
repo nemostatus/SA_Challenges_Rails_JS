@@ -17,8 +17,8 @@ class Challenge {
         <li> Difficulty: ${this.difficulty} </li>
         <li> ${this.complete} person(s) completed this challenge </li> 
         <button class="complete-bttn" data-id=${this.id} data-complete = "${this.complete}" onClick =" fetchQuotes(); updateChallenge()" >  <i class="fa fa-flag-checkered" style="font-size:24px"></i>  Complete!  </button>
-        <button class = "attempt-bttn" data-id = ${this.id} data-name = "${this.name}" onClick = "  createAttempt();  scrollToTop();  calendar()"> Attempt</button>
-        <button class="attempted" data-id = ${this.id}   onClick="fetchAttempts(); this.onclick=null; scrollToTop() ">All Attempts </button>
+        <button class = "attempt-bttn" data-id = ${this.id} data-name = "${this.name}" onClick =  createAttempt();  scrollToTop();  calendar()"> Attempt</button>
+        <button class="attempted" data-id = ${this.id}   onClick="clearDiv('attempts-container'); fetchAttempts();  scrollToTop() ">All Attempts </button>
        
         </ul>
         

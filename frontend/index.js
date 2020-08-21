@@ -15,32 +15,19 @@ function fetchChallenges() {
       });
       for (const challenge of challenges) {
         let c = new Challenge(challenge)
-        //   challenge.id,
-        //   challenge.name,
-        //   challenge.description,
-        //   challenge.difficulty,
-        //   challenge.complete
-        // );
-        c.renderChallenges();
+       c.renderChallenges();
       }
     });
 }
 
 function fetchAttempts() {
-  clearDiv("attempts-container")
+  
   fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
     .then((resp) => resp.json())
     .then((attempts) => {
       for (const attempt of attempts) {
         let a = new Attempt(attempt);
-          // attempt.id,
-          // attempt.name,
-          // attempt.deadline,
-          // attempt.notes,
-          // attempt.cheer,
-          // attempt.challenge_id
-    
-        a.renderAttempts();
+       a.renderAttempts();
       }
     });
 }
@@ -146,13 +133,7 @@ function AttemptformSubmission() {
     .then((resp) => resp.json())
     .then((attempt) => {
       let a = new Attempt(attempt
-        // attempt.id,
-        // attempt.name,
-        // attempt.deadline,
-        // attempt.notes,
-        // attempt.cheer,
-        // attempt.challenge_id
-      );
+       );
       a.renderAttempts();
     });
 }
@@ -174,6 +155,7 @@ function updateChallenge() {
 }
 
 function updateAttempt() {
+  findAndClearDiv(parseInt(event.target.dataset.id))
   let attemptId = parseInt(event.target.dataset.id);
   let cheerValue = parseInt(event.target.dataset.cheer);
   fetch(`${BASE_URL}/attempts/${attemptId}`, {
@@ -184,9 +166,11 @@ function updateAttempt() {
     },
     body: JSON.stringify({
       cheer: cheerValue + 1,
+
     }),
-  });
- 
+
+    });
+   
 }
 
 function scrollToTop() {
@@ -204,15 +188,6 @@ function fetchQuotes() {
       alert(`${random.text} - ${random.author} `);
     });
 }
-
-// function removeBttns() {
-//   let bttns = document.getElementsByClassName("attempt-bttn");
-//   for (const bttn of bttns) {
-//     setTimeout(() => {
-//       bttn.remove();
-//     }, 100);
-//   }
-// }
 
 function calendar() {
   $(() => {
@@ -237,4 +212,12 @@ function greeting() {
 
 function clearDiv(divId){
 document.getElementById(divId).innerHTML = ""
+}
+
+function findAndClearDiv(number){
+  let buttons = document.getElementsByClassName('cheer')
+let array = Array.from(buttons)
+let buttonIneed = array.filter(button => button.dataset.id === `${number}`)
+let ul = buttonIneed[0].parentElement
+ul.innerHTML = ""
 }
