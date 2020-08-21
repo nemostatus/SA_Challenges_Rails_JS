@@ -14,13 +14,13 @@ function fetchChallenges() {
         return a.difficulty - b.difficulty;
       });
       for (const challenge of challenges) {
-        let c = new Challenge(
-          challenge.id,
-          challenge.name,
-          challenge.description,
-          challenge.difficulty,
-          challenge.complete
-        );
+        let c = new Challenge(challenge)
+        //   challenge.id,
+        //   challenge.name,
+        //   challenge.description,
+        //   challenge.difficulty,
+        //   challenge.complete
+        // );
         c.renderChallenges();
       }
     });
@@ -31,14 +31,14 @@ function fetchAttempts() {
     .then((resp) => resp.json())
     .then((attempts) => {
       for (const attempt of attempts) {
-        let a = new Attempt(
-          attempt.id,
-          attempt.name,
-          attempt.deadline,
-          attempt.notes,
-          attempt.cheer,
-          attempt.challenge_id
-        );
+        let a = new Attempt(attempt);
+          // attempt.id,
+          // attempt.name,
+          // attempt.deadline,
+          // attempt.notes,
+          // attempt.cheer,
+          // attempt.challenge_id
+    
         a.renderAttempts();
       }
     });

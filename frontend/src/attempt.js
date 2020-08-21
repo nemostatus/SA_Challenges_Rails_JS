@@ -1,11 +1,11 @@
 class Attempt {
-  constructor(id, name, deadline, notes, cheer, challenge_id) {
-    this.id = id;
-    this.name = name;
-    this.deadline = deadline;
-    this.notes = notes;
-    this.cheer = cheer;
-    this.challenge_id = challenge_id;
+  constructor(attempt) {
+    this.id = attempt.id;
+    this.name = attempt.name;
+    this.deadline = attempt.deadline;
+    this.notes = attempt.notes;
+    this.cheer = attempt.cheer;
+    this.challenge_id = attempt.challenge_id;
   }
 
   renderAttempts() {
