@@ -3,9 +3,9 @@ class AttemptsController < ApplicationController
 
   # GET /attempts
   def index
-    @challenge = Challenge.find(params[:challenge_id])
-    @attempts = @challenge.attempts
-    render json: @attempts
+    challenge = Challenge.find(params[:challenge_id])
+    attempts = challenge.attempts
+    render json: attempts
   end
 
   # GET /attempts/1

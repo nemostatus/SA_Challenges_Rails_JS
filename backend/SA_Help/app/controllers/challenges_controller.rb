@@ -3,9 +3,9 @@ class ChallengesController < ApplicationController
 
   # GET /challenges
   def index
-    @challenges = Challenge.all
+    challenges = Challenge.all
 
-    render json: @challenges
+    render json: challenges
   end
 
   # GET /challenges/1
