@@ -215,10 +215,12 @@ document.getElementById(divId).innerHTML = ""
 }
 
 function findAndClearDiv(number){
+  let counter = []
   let buttons = document.getElementsByClassName('cheer')
 let array = Array.from(buttons)
-console.log(number)
+
 let buttonIneed = array.filter(button => button.dataset.id === `${number}`)
 let ul = buttonIneed[0].parentElement
 ul.getElementsByTagName('li')[2].innerHTML = `${parseInt(event.target.dataset.cheer) + 1 }  cheer(s)! `
+
 }
