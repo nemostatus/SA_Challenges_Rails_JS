@@ -10,6 +10,7 @@ function fetchChallenges() {
   fetch(`${BASE_URL}/challenges`)
     .then((resp) => resp.json())
     .then((challenges) => {
+      
       challenges.sort((a, b) => {
         return a.difficulty - b.difficulty;
       });
@@ -25,18 +26,14 @@ function fetchAttempts() {
   fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
     .then((resp) => resp.json())
     .then((attempts) => {
-      if(attempts.length === 0){
-        document.getElementById("attempts-container").innerHTML = "<i> There are currently no attempts for this challenge, be the first! </i>"
-          
-      }
-      else{
+  
         attempts.sort((a, b) => {
           return b.cheer - a.cheer;
         });
       for (const attempt of attempts) {
         let a = new Attempt(attempt);
        a.renderAttempts();
-      }}
+      }
     });
 }
 
@@ -61,9 +58,10 @@ function createAttempt() {
  
   let attemptForm = document.getElementById("attempt-form");
   attemptForm.innerHTML = `
-    <h2> <u>Try Challenge: ${event.target.dataset.name}</u> </h2>
+ 
+    <h2> <u>Attempt Challenge: ${event.target.dataset.name}</u> </h2>
     <i> <p> e.g. deadline: Friday<br>
-    notes(your step by step method of approaching the challenge): Find good sources for stand up, and practice in front of my family and friends first <br>
+    notes(your step by step method of approaching the challenge) <br>
    </p></i>
 
     <form>
