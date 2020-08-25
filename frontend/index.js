@@ -30,6 +30,9 @@ function fetchAttempts() {
           
       }
       else{
+        attempts.sort((a, b) => {
+          return b.cheer - a.cheer;
+        });
       for (const attempt of attempts) {
         let a = new Attempt(attempt);
        a.renderAttempts();
@@ -55,17 +58,18 @@ function createChallenge() {
 }
 
 function createAttempt() {
-  clearDiv('attempt-form')
+ 
   let attemptForm = document.getElementById("attempt-form");
-  attemptForm.innerHTML += `
+  attemptForm.innerHTML = `
     <h2> <u>Try Challenge: ${event.target.dataset.name}</u> </h2>
-    <i> <p> e.g. deadline: friday<br>
-    notes: Find good sources for stand up, and practice in front of my family and friends first
-</p></i>
+    <i> <p> e.g. deadline: Friday<br>
+    notes(your step by step method of approaching the challenge): Find good sources for stand up, and practice in front of my family and friends first <br>
+   </p></i>
+
     <form>
     <input type = "hidden" id="attemptname" name = "attemptname" value = "${event.target.dataset.name}" ><br>
     <label for ="deadline"> <i class='far fa-calendar-alt' style='font-size:24px'></i> Deadline: </label>
-    <input type ="text" onkeydown="event.preventDefault()" autocomplete = "off" id="deadline" required><br>
+    <input type ="text"  autocomplete = "off" id="deadline" required><br>
     <label for ="notes"><i class='fas fa-book' style='font-size:24px'></i> Notes: </label>
     <input type ="text" id="notes" required><br>
     <input type = "hidden" id="cheer" value = "0">
@@ -163,6 +167,7 @@ function scrollToTop() {
   window.scrollTo(0, 0);
 }
 
+
 function fetchQuotes() {
   fetch("https://type.fit/api/quotes")
     .then((resp) => resp.json())
@@ -197,10 +202,10 @@ function greeting() {
 }
 
 function clearDiv(divId){
-document.getElementById(divId).innerHTML = ""
-}
-
-function findAndClearDiv(number){
+  document.getElementById(divId).innerHTML = ""
+  }
+  
+function findAndReplaceCheer(number){
   
   let buttons = document.getElementsByClassName('cheer')
 let array = Array.from(buttons)
