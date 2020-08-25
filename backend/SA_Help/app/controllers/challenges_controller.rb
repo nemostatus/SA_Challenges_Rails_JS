@@ -15,12 +15,12 @@ class ChallengesController < ApplicationController
 
   # POST /challenges
   def create
-    @challenge = Challenge.new(challenge_params)
+    challenge = Challenge.new(challenge_params)
 
-    if @challenge.save
-      render json: @challenge, status: :created, location: @challenge
+    if challenge.save
+      render json: challenge, status: :created, location: challenge
     else
-      render json: @challenge.errors, status: :unprocessable_entity
+      render json: challenge.errors, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +46,6 @@ class ChallengesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def challenge_params
-      params.require(:challenge).permit(:name, :description, :difficulty, :complete)
+      params.require(:challenge).permit(:name, :description, :difficulty)
     end
 end

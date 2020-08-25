@@ -15,12 +15,12 @@ class AttemptsController < ApplicationController
 
   # POST /attempts
   def create
-    @attempt = Attempt.new(attempt_params)
+    attempt = Attempt.new(attempt_params)
 
-    if @attempt.save
-      render json: @attempt, status: :created, location: @attempt
+    if attempt.save
+      render json: attempt, status: :created, location: attempt
     else
-      render json: @attempt.errors, status: :unprocessable_entity
+      render json: attempt.errors, status: :unprocessable_entity
     end
   end
 

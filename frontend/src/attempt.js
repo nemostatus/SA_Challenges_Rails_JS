@@ -16,7 +16,7 @@ class Attempt {
     
             <ul>
             <u><h3>Attempt of the ${this.name} challenge  </h3></u>
-            <p><i> Cheer this attempt if you found the notes helpful to completing the challenge)</i> </p>
+            <p><i> Cheer this attempt if you found the notes helpful to completing the challenge</i> </p>
             <li>Deadline: ${this.deadline} </li>
             <li>Notes: ${this.notes} </li>
             <li> ${this.cheer} Cheer(s)! </li>
