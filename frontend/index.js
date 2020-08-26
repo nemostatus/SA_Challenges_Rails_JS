@@ -22,12 +22,11 @@ function fetchChallenges() {
 }
 
 function fetchAttempts() {
-  
+ 
   fetch(`${BASE_URL}/challenges/${event.target.dataset.id}/attempts`)
     .then((resp) => resp.json())
     .then((attempts) => {
-  
-        attempts.sort((a, b) => {
+     attempts.sort((a, b) => {
           return b.cheer - a.cheer;
         });
       for (const attempt of attempts) {
@@ -55,7 +54,7 @@ function createChallenge() {
 }
 
 function createAttempt() {
- 
+  
   let attemptForm = document.getElementById("attempt-form");
   attemptForm.innerHTML = `
  
@@ -191,11 +190,11 @@ function greeting() {
   let trueGreeting = item[0].getElementsByClassName("nav-item")[0];
 
   if (time < 6) {
-    trueGreeting.innerHTML += `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Hello night owl!</h2> `;
+    trueGreeting.innerHTML = `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Hello night owl!</h2> `;
   } else if (time < 19) {
-    trueGreeting.innerHTML += `<h2> <i class="fas fa-sun" style='font-size:44px; color: gold'></i> Good Day!</h2> `;
+    trueGreeting.innerHTML = `<h2> <i class="fas fa-sun" style='font-size:44px; color: gold'></i> Good Day!</h2> `;
   } else {
-    trueGreeting.innerHTML += `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `;
+    trueGreeting.innerHTML = `<h2> <i class="fas fa-moon" style='font-size:44px; color: gold'></i> Good Night!</h2> `;
   }
 }
 
@@ -209,7 +208,9 @@ function findAndReplaceCheer(number){
 let array = Array.from(buttons)
 
 let buttonIneed = array.filter(button => button.dataset.id === `${number}`)
-let ul = buttonIneed[0].parentElement
+let trueButton = buttonIneed[0]
+trueButton.innerHTML = `<i class='fas fa-star' style='font-size:24px;color: gold'></i> Thank you for your cheer!`  
+let ul = trueButton.parentElement
 ul.getElementsByTagName('li')[2].innerHTML = `${parseInt(event.target.dataset.cheer) + 1 }  cheer(s)! `
 
 
