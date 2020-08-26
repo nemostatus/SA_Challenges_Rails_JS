@@ -7,7 +7,7 @@ class Challenge {
    
   }
 
-  renderChallenges() {
+  renderChallenge() {
     let challengesDiv = document.getElementById("challenges-container");
     challengesDiv.innerHTML += `
         

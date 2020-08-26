@@ -1,25 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetchChallenges();
+  fetchChallenges(renderChallenges);
   createChallenge();
   greeting();
 });
 
 const BASE_URL = "http://127.0.0.1:3000";
 
-function fetchChallenges() {
+function renderChallenges(challenges){
+  challenges.sort((a, b) => {
+    return a.difficulty - b.difficulty;
+  });
+     for (const challenge of challenges) {
+        let c = new Challenge(challenge)
+       c.renderChallenge();
+      
+};}
+
+function fetchChallenges(callback) {
   fetch(`${BASE_URL}/challenges`)
     .then((resp) => resp.json())
-    .then((challenges) => {
-      
-      challenges.sort((a, b) => {
-        return a.difficulty - b.difficulty;
-      });
-      for (const challenge of challenges) {
-        let c = new Challenge(challenge)
-       c.renderChallenges();
-      }
-    });
+.then((challenges) => callback(challenges))
+
 }
+   
+function renderAlphabetizedChallenges(challenges){
+  clearDiv("challenges-container")
+ challenges.sort((a,b) => { return a.name.localeCompare(b.name)})
+ for (const challenge of challenges) {
+  let c = new Challenge(challenge)
+ c.renderChallenge();
+}}
+    
+
+
+  
+
+  
+
+// your fetchChallenges function has access to all of the challenges
+// it's possible that you refactor to make 2 different functions - one that iterates and renders(basically the functionality of line 14-19)
+// and one that alphabetizes if the button is clicked.
+// this would mean that ALL fetch challenges would do, is fetch them, and return the challenges response
 
 function fetchAttempts() {
  
@@ -104,7 +125,7 @@ function ChallengeformSubmission() {
       let c = new Challenge(
         challenge
       );
-      c.renderChallenges();
+      c.renderChallenge();
     });
     alert("Thank you! you can find your challenge below.")
 }
@@ -216,3 +237,4 @@ ul.getElementsByTagName('li')[2].innerHTML = `${parseInt(event.target.dataset.ch
 
 
 }
+
