@@ -106,6 +106,7 @@ function ChallengeformSubmission() {
       );
       c.renderChallenges();
     });
+    alert("Thank you! you can find your challenge below.")
 }
 
 function AttemptformSubmission() {
